@@ -6,8 +6,8 @@
 # 1. Data Preparation
 # 2. Expected Number of Transaction with BG-NBD Model
 # 3. Expected Average Profit with Gamma-Gamma Model
-#4. Calculation of CLTV with BG-NBD and Gamma-Gamma Model
-#5. Creating Segments Based on CLTV
+# 4. Calculation of CLTV with BG-NBD and Gamma-Gamma Model
+# 5. Creating Segments Based on CLTV
 # 6. Functionalization of the work
 
 
