@@ -2,15 +2,15 @@
 # CUSTOMER LIFETIME VALUE
 #######################
 
-#1. Data Preparation
+# 1. Data Preparation
 # 2. Average Order Value (average_order_value = total_price / total_transaction)
 # 3. Purchase Frequency (total_transaction / total_number_of_customers)
-#4. Repeat Rate & Churn Rate (number of customers making multiple purchases / all customers)
+# 4. Repeat Rate & Churn Rate (number of customers making multiple purchases / all customers)
 # 5. Profit Margin (profit_margin = total_price * 0.10)
 # 6. Customer Value (customer_value = average_order_value * purchase_frequency)
-#7. Customer Lifetime Value (CLTV = (customer_value / churn_rate) x profit_margin)
-#8. Creating Segments
-#9. BONUS: Functionalization of All Transactions
+# 7. Customer Lifetime Value (CLTV = (customer_value / churn_rate) x profit_margin)
+# 8. Creating Segments
+# 9. BONUS: Functionalization of All Transactions
 
 #######################
 # 1.Data Preparation
@@ -118,7 +118,7 @@ cltv_c.sort_values(by="cltv", ascending=False).head()
 cltv_c.describe().T
 
 #######################
-#8. Creating Segments
+# 8. Creating Segments
 #######################
 
 cltv_c
@@ -138,7 +138,7 @@ cltv_c.groupby("segment").agg({"count","mean","sum"})
 cltv_c.to_csv("cltc_c.csv")
 
 #######################
-#9. BONUS: Functionalization of All Transactions
+# 9. BONUS: Functionalization of All Transactions
 #######################
 
 def create_cltv_c(dataframe, profit=0.10):
@@ -152,7 +152,7 @@ def create_cltv_c(dataframe, profit=0.10):
                                                     'Quantity': lambda x: x.sum(),
                                                     'TotalPrice': lambda x: x.sum()})
      cltv_c.columns = ['total_transaction', 'total_unit', 'total_price']
-     #avg_order_value
+     # avg_order_value
      cltv_c['avg_order_value'] = cltv_c['total_price'] / cltv_c['total_transaction']
      # purchase_frequency
      cltv_c["purchase_frequency"] = cltv_c['total_transaction'] / cltv_c.shape[0]
@@ -161,7 +161,7 @@ def create_cltv_c(dataframe, profit=0.10):
      churn_rate = 1 - repeat_rate
      # profit_margin
      cltv_c['profit_margin'] = cltv_c['total_price'] * profit
-     #CustomerValue
+     # CustomerValue
      cltv_c['customer_value'] = (cltv_c['avg_order_value'] * cltv_c["purchase_frequency"])
      # Customer Lifetime Value
      cltv_c['cltv'] = (cltv_c['customer_value'] / churn_rate) * cltv_c['profit_margin']
