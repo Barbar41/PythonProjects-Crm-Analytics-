@@ -3,7 +3,7 @@
 #################
 
 #############################
-# business Problem
+# Business Problem
 #############################
 
 # The UK-based retail company wants to divide its customers into segments and determine marketing strategies according to these segments.
@@ -13,9 +13,9 @@
 # Dataset Story
 
 # The data set named Online Retail II is from a UK-based retail company between 01/12/2009 - 09/12/2011.
-It includes online sales transactions between #. The company's product catalog includes gift items and it is known that most of its customers are wholesalers.
+# It includes online sales transactions between #. The company's product catalog includes gift items and it is known that most of its customers are wholesalers.
 
-#8 Variable 541,909 Observations 45.6MB
+# 8 Variable 541,909 Observations 45.6MB
 #######################
 
 # InvoiceNo Invoice Number (If this code starts with C, it means that the transaction has been cancelled)
